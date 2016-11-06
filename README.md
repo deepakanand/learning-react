@@ -1,6 +1,8 @@
 # learning-react
 A repo for code and concepts for learning ReactJS
 
+Directory names correspond to the learning material/sources mentioned below
+
 Sources:
  1. http://www.reactenlightenment.com/
  2. https://www.safaribooksonline.com/library/view/learning-full-stack/9781787121348/
