@@ -1,11 +1,17 @@
 var webpack = require('webpack');
 
 module.exports = {
-    // file thats going to start the conversion process
-    entry: './private/app.jsx',
+    // entry-point files that are going to 
+    // start the conversion process
+    entry: {
+        app: "./private/app.jsx",
+        "app-esnext": "./private/app-esnext.jsx"
+    },
+    // each of the above files shall create
+    // a seperate built file in public
     output: {
         path: './public',
-        filename: 'app.js'
+        filename: "[name].js"
     },
     module: {
         loaders: [

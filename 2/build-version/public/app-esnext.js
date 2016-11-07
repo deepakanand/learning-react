@@ -42,189 +42,250 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/*!*************************!*\
-  !*** ./private/app.jsx ***!
-  \*************************/
+/*!********************************!*\
+  !*** ./private/app-esnext.jsx ***!
+  \********************************/
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactDom = __webpack_require__(/*! react-dom */ 34);
+	
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
-	var React = __webpack_require__(/*! react */ 1);
-	var ReactDOM = __webpack_require__(/*! react-dom */ 34);
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
-	var Layout = React.createClass({
-		displayName: 'Layout',
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Layout = function (_React$Component) {
+		_inherits(Layout, _React$Component);
+	
+		function Layout() {
+			_classCallCheck(this, Layout);
+	
+			return _possibleConstructorReturn(this, (Layout.__proto__ || Object.getPrototypeOf(Layout)).apply(this, arguments));
+		}
+	
+		_createClass(Layout, [{
+			key: 'render',
 	
 	
-		propTypes: {
-			children: React.PropTypes.element.isRequired
-		},
-		render: function render() {
-			return React.createElement(
-				'div',
-				{ className: 'overlay' },
-				React.createElement(
+			// TODO: Add ES2017 support
+			// static propTypes = { children:  React.PropTypes.element.isRequired}
+	
+			value: function render() {
+				return _react2.default.createElement(
 					'div',
-					{ className: 'box' },
-					React.createElement(
-						'h2',
+					{ className: 'overlay' },
+					_react2.default.createElement(
+						'div',
+						{ className: 'box' },
+						_react2.default.createElement(
+							'h2',
+							null,
+							this.props.title
+						),
+						this.props.children
+					),
+					_react2.default.createElement(
+						'footer',
 						null,
-						this.props.title
-					),
-					this.props.children
-				),
-				React.createElement(
-					'footer',
-					null,
-					'By signing up, you agree to our ',
-					React.createElement(
-						'a',
-						{ href: '/terms' },
-						'Terms of Service'
-					),
-					' and ',
-					React.createElement(
-						'a',
-						{ href: '/privacy' },
-						'Privacy Policy'
-					),
-					'.'
-				)
-			);
+						'By signing up, you agree to our ',
+						_react2.default.createElement(
+							'a',
+							{ href: '/terms' },
+							'Terms of Service'
+						),
+						' and ',
+						_react2.default.createElement(
+							'a',
+							{ href: '/privacy' },
+							'Privacy Policy'
+						),
+						'.'
+					)
+				);
+			}
+		}]);
+	
+		return Layout;
+	}(_react2.default.Component);
+	
+	Layout.propTypes = { children: _react2.default.PropTypes.element.isRequired };
+	
+	var Email = function (_React$Component2) {
+		_inherits(Email, _React$Component2);
+	
+		function Email() {
+			_classCallCheck(this, Email);
+	
+			return _possibleConstructorReturn(this, (Email.__proto__ || Object.getPrototypeOf(Email)).apply(this, arguments));
 		}
-	});
 	
-	var Badge = React.createClass({
-		displayName: 'Badge',
+		_createClass(Email, [{
+			key: 'render',
+			value: function render() {
+				var _React$createElement;
 	
-		render: function render() {
-			return React.createElement(
-				'h3',
-				null,
-				'Deepak'
-			);
-		}
-	});
+				return _react2.default.createElement('input', (_React$createElement = { type: 'email', name: 'email', 'data-info': 'An active email account is needed to gain access.', placeholder: 'Your email', pattern: '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$', required: true, title: 'You need to have a working email to gain access.' }, _defineProperty(_React$createElement, 'required', 'required'), _defineProperty(_React$createElement, 'maxLength', '255'), _defineProperty(_React$createElement, 'id', 'email'), _React$createElement));
+			}
+		}]);
 	
-	var Email = React.createClass({
-		displayName: 'Email',
+		return Email;
+	}(_react2.default.Component);
 	
-		render: function render() {
-			var _React$createElement;
+	var Password = function (_React$Component3) {
+		_inherits(Password, _React$Component3);
 	
-			return React.createElement('input', (_React$createElement = { type: 'email', name: 'email', 'data-info': 'An active email account is needed to gain access.', placeholder: 'Your email', pattern: '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$', required: true, title: 'You need to have a working email to gain access.' }, _defineProperty(_React$createElement, 'required', 'required'), _defineProperty(_React$createElement, 'maxLength', '255'), _defineProperty(_React$createElement, 'id', 'email'), _React$createElement));
-		}
-	});
+		function Password() {
+			_classCallCheck(this, Password);
 	
-	var Password = React.createClass({
-		displayName: 'Password',
+			var _this3 = _possibleConstructorReturn(this, (Password.__proto__ || Object.getPrototypeOf(Password)).call(this));
 	
-	
-		getInitialState: function getInitialState() {
-			return {
+			_this3.state = {
 				password1: '',
 				password2: ''
 			};
-		},
+			return _this3;
+		}
 	
-		onChange: function onChange(e) {
-			this.setState(_defineProperty({}, e.target.name, e.target.value));
-		},
-	
-		render: function render() {
-			var children = [];
-			children[0] = React.createElement('input', { type: 'password', name: 'password1', required: 'required',
-				placeholder: 'Password', key: 'password', onChange: this.onChange });
-	
-			if (this.props.twice) {
-				children[1] = React.createElement('input', { type: 'password', name: 'password2', required: 'required',
-					placeholder: 'Repeat Password', key: 'password2', onChange: this.onChange });
+		_createClass(Password, [{
+			key: 'onChange',
+			value: function onChange(e) {
+				this.setState(_defineProperty({}, e.target.name, e.target.value));
 			}
-			var msg = "";
-			if (this.state.password2.length && this.state.password1 !== this.state.password2) {
-				msg = React.createElement(
+		}, {
+			key: 'render',
+			value: function render() {
+				var children = [];
+				children[0] = _react2.default.createElement('input', { type: 'password', name: 'password1', required: 'required',
+					placeholder: 'Password', key: 'password', onChange: this.onChange.bind(this) });
+	
+				if (this.props.twice) {
+					children[1] = _react2.default.createElement('input', { type: 'password', name: 'password2', required: 'required',
+						placeholder: 'Repeat Password', key: 'password2', onChange: this.onChange.bind(this) });
+				}
+				var msg = "";
+				if (this.state.password2.length && this.state.password1 !== this.state.password2) {
+					msg = _react2.default.createElement(
+						'div',
+						{ className: 'error-message' },
+						'Passwords must match'
+					);
+				}
+	
+				return _react2.default.createElement(
 					'div',
-					{ className: 'error-message' },
-					'Passwords must match'
+					null,
+					children,
+					msg
 				);
 			}
+		}]);
 	
-			return React.createElement(
-				'div',
-				null,
-				children,
-				msg
-			);
+		return Password;
+	}(_react2.default.Component);
+	
+	var LoginForm = function (_React$Component4) {
+		_inherits(LoginForm, _React$Component4);
+	
+		function LoginForm() {
+			_classCallCheck(this, LoginForm);
+	
+			return _possibleConstructorReturn(this, (LoginForm.__proto__ || Object.getPrototypeOf(LoginForm)).apply(this, arguments));
 		}
-	});
 	
-	var LoginForm = React.createClass({
-		displayName: 'LoginForm',
-	
-	
-		onChange: function onChange(e) {},
-		render: function render() {
-			return React.createElement(
-				'form',
-				{ method: 'post', acceptCharset: 'utf-8', action: '/u/login' },
-				React.createElement(Email, null),
-				React.createElement(Password, null),
-				React.createElement(
-					'label',
-					{ htmlFor: 'remember-me' },
-					React.createElement('input', { type: 'checkbox', name: 'remember_me', value: '1', defaultChecked: true,
-						id: 'remember-me' }),
-					'Remember me'
-				),
-				React.createElement(
-					'p',
-					null,
-					React.createElement(
-						'a',
-						{ href: 'register.html', className: 'inlink' },
-						'Register'
+		_createClass(LoginForm, [{
+			key: 'onChange',
+			value: function onChange(e) {}
+		}, {
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'form',
+					{ method: 'post', acceptCharset: 'utf-8', action: '/u/login' },
+					_react2.default.createElement(Email, null),
+					_react2.default.createElement(Password, null),
+					_react2.default.createElement(
+						'label',
+						{ htmlFor: 'remember-me' },
+						_react2.default.createElement('input', { type: 'checkbox', name: 'remember_me', value: '1', defaultChecked: true,
+							id: 'remember-me' }),
+						'Remember me'
 					),
-					' | ',
-					React.createElement(
-						'a',
-						{ href: '#request-reset-password', className: 'inlink' },
-						'Reset Password'
+					_react2.default.createElement(
+						'p',
+						null,
+						_react2.default.createElement(
+							'a',
+							{ href: 'register.html', className: 'inlink' },
+							'Register'
+						),
+						' | ',
+						_react2.default.createElement(
+							'a',
+							{ href: '#request-reset-password', className: 'inlink' },
+							'Reset Password'
+						)
+					),
+					_react2.default.createElement(
+						'button',
+						{ type: 'submit' },
+						'Login'
 					)
-				),
-				React.createElement(
-					'button',
-					{ type: 'submit' },
-					'Login'
-				)
-			);
+				);
+			}
+		}]);
+	
+		return LoginForm;
+	}(_react2.default.Component);
+	
+	var RegisterForm = function (_React$Component5) {
+		_inherits(RegisterForm, _React$Component5);
+	
+		function RegisterForm() {
+			_classCallCheck(this, RegisterForm);
+	
+			return _possibleConstructorReturn(this, (RegisterForm.__proto__ || Object.getPrototypeOf(RegisterForm)).apply(this, arguments));
 		}
-	});
 	
-	var RegisterForm = React.createClass({
-		displayName: 'RegisterForm',
+		_createClass(RegisterForm, [{
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'form',
+					{ method: 'post', acceptCharset: 'utf-8', action: '/u/register' },
+					_react2.default.createElement(Email, null),
+					_react2.default.createElement(Password, { twice: true }),
+					_react2.default.createElement('span', { className: 'col-p100 info' }),
+					_react2.default.createElement(
+						'button',
+						{ type: 'submit' },
+						'Submit'
+					)
+				);
+			}
+		}]);
 	
-		render: function render() {
-			return React.createElement(
-				'form',
-				{ method: 'post', acceptCharset: 'utf-8', action: '/u/register' },
-				React.createElement(Email, null),
-				React.createElement(Password, { twice: true }),
-				React.createElement('span', { className: 'col-p100 info' }),
-				React.createElement(
-					'button',
-					{ type: 'submit' },
-					'Submit'
-				)
-			);
-		}
-	});
+		return RegisterForm;
+	}(_react2.default.Component);
 	
-	ReactDOM.render(React.createElement(
+	_reactDom2.default.render(_react2.default.createElement(
 		Layout,
 		{ title: 'Register' },
-		React.createElement(RegisterForm, null)
+		_react2.default.createElement(RegisterForm, null)
 	), document.getElementById('app'));
 
 /***/ },
@@ -22109,4 +22170,4 @@
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=app.js.map
+//# sourceMappingURL=app-esnext.js.map

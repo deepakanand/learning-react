@@ -9,4 +9,8 @@ build-version
 =============
 build-version means that the JSX, CJS, ES6 is transpiled and packaged into a single file. In this directory run the command - "npm run build" and start a web server
 
-Demo link: https://rawgit.com/deepakanand/learning-react/master/2/build-version/public/index.html
+###Demo links
+
+Non-ES6 version: https://rawgit.com/deepakanand/learning-react/master/2/build-version/public/index.html
+
+ES6 version: https://rawgit.com/deepakanand/learning-react/master/2/build-version/public/index-esnext.html
