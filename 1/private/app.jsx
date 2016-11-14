@@ -1,20 +1,14 @@
 import React from 'react'
 import {render} from 'react-dom'
 
-var HelloReact = React.createClass({
-	render: function() {
-		return (
-			<div> Hello React!! </div>
-		)
-	}
-})
+import Profile from './components/Profile.jsx'
 
 var Profiles = React.createClass({
 	getInitialState: function() {
 		return {
 			profiles : [
-				{id: 1, name: 'John', profession: 'UX specialist'},
-				{id: 2, name: 'Jane', profession: 'Developer'}
+				{id: 1, name: 'John', profession: 'UX specialist', hobbies: ['painting', 'travelling']},
+				{id: 2, name: 'Jane', profession: 'Developer', hobbies: ['problem-solving', 'stamps']}
 			]
 		}
 	},
@@ -22,14 +16,17 @@ var Profiles = React.createClass({
 	render: function () {
 
 		return (
-			<section> 
-				{this.state.profiles.map(function(profile){			
-					return <div	key={profile.id}>
-					<h3>{profile.name}</h3>
-					<p>{profile.profession}</p>
-					</div>
-				})}
-			</section>
+			<div>
+                {this.state.profiles.map(function(profile){
+                    return (<Profile
+                        name = {profile.name}
+                        profession = {profile.profession}
+                        hobbies = {profile.hobbies}
+                        key = {profile.id}
+                        />
+                    )
+                })}
+            </div>
 		)
 
 	}
