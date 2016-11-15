@@ -1,44 +1,39 @@
 import React from 'react'
 import {render} from 'react-dom'
 
-import Profile from './components/Profile.jsx'
+import {Profile, Profiles} from './components/Profile.jsx'
+import AddProfile from './components/AddProfile.jsx'
 
-var Profiles = React.createClass({
-	getInitialState: function() {
-		return {
-			profiles : [
-				{id: 1, name: 'John', profession: 'UX specialist', hobbies: ['painting', 'travelling']},
-				{id: 2, name: 'Jane', profession: 'Developer', hobbies: ['problem-solving', 'stamps']}
-			]
-		}
-	},
+class App extends React.Component {
 
-	render: function () {
+    constructor(props) {
 
+        super(props)
+
+        this.state =  {
+            profiles : [
+                {id: 1, name: 'John', profession: 'UX specialist', hobbies: ['painting', 'travelling']},
+                {id: 2, name: 'Jane', profession: 'Developer', hobbies: ['problem-solving', 'stamps']}
+            ]
+        }
+
+        this.addUser = this.addUser.bind(this)
+    }
+
+    addUser() {
+        this.setState({
+            profiles: this.state.profiles.concat([{id: 3, name: 'Bob', profession: 'team lead', hobbies: ['leading', 'teaming']}])
+        })
+    }
+
+	render() {
 		return (
-			<div>
-                {this.state.profiles.map(function(profile){
-                    return (<Profile
-                        name = {profile.name}
-                        profession = {profile.profession}
-                        hobbies = {profile.hobbies}
-                        key = {profile.id}
-                        />
-                    )
-                })}
+            <div>
+			<Profiles profiles = {this.state.profiles}/>
+            <AddProfile handleAddUser = {this.addUser}/>
             </div>
 		)
-
 	}
-})
-
-
-var App = React.createClass ({
-	render: function(){
-		return (
-			<Profiles />
-		)
-	}
-})
+}
 
 render(<App />, document.getElementById('app'))
