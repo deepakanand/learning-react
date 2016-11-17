@@ -20,9 +20,9 @@ class App extends React.Component {
         this.addUser = this.addUser.bind(this)
     }
 
-    addUser() {
+    addUser(newUser) {
         this.setState({
-            profiles: this.state.profiles.concat([{id: 3, name: 'Bob', profession: 'team lead', hobbies: ['leading', 'teaming']}])
+            profiles: this.state.profiles.concat([newUser])
         })
     }
 
