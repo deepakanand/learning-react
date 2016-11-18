@@ -11,13 +11,26 @@ class App extends React.Component {
         super(props)
 
         this.state =  {
-            profiles : [
-                {id: 1, name: 'John', profession: 'UX specialist', hobbies: ['painting', 'travelling']},
-                {id: 2, name: 'Jane', profession: 'Developer', hobbies: ['problem-solving', 'stamps']}
-            ]
+            profiles : []
         }
 
         this.addUser = this.addUser.bind(this)
+    }
+
+    // data-fetching type operations
+    componentDidMount() {
+
+        fetch('http://localhost:3000/profiles')
+        .then(res => res.json())
+        .then(data => {
+            this.setState({
+                profiles: data
+            })
+        })
+        .catch(err => {
+            console.log(err)
+        })
+
     }
 
     addUser(newUser) {

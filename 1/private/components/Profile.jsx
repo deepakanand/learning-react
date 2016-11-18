@@ -22,24 +22,43 @@ var Profile = React.createClass({
     }
 })
 
-class Profiles extends React.Component {
 
-    render() {
+// class Profiles extends React.Component {
 
-        return (
-            <div>
-                {this.props.profiles.map(function(profile){
-                    return (<Profile
-                        name = {profile.name}
-                        profession = {profile.profession}
-                        hobbies = {profile.hobbies}
-                        />
-                    )
-                })}
-            </div>
-        )
+//     render() {
 
-    }
-}
+//         return (
+//             <div>
+//                 {this.props.profiles.map(function(profile){
+//                     return (<Profile
+//                         name = {profile.name}
+//                         profession = {profile.profession}
+//                         hobbies = {profile.hobbies}
+//                         />
+//                     )
+//                 })}
+//             </div>
+//         )
+
+//     }
+// }
+
+// If React components only have a render function
+// i.e. does not have state/methods
+// you can use just a function to define these
+// Stateless Components
+var Profiles = props => (
+        <div>
+            {props.profiles.map(function(profile){
+                return (<Profile
+                    name = {profile.name}
+                    profession = {profile.profession}
+                    hobbies = {profile.hobbies}
+                    />
+                )
+            })}
+        </div>
+)
+
 
 export { Profile, Profiles }
