@@ -1,3 +1,7 @@
+// Server side rendering of React app
+// 
+// Implementation incomplete / file not in use
+
 import koa from 'koa';
 import route from 'koa-route';
 import serve from 'koa-static';

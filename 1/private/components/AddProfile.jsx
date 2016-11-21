@@ -54,10 +54,10 @@ export default class AddProfile extends React.Component {
 
         return (
             <div>
-                 <button onClick = {this.onAddUser.bind(this)}>Add new user </button>
                  <input onChange = {this.onUserName} value = {this.state.name} />
                  <input onChange = {this.onUserProfession} value = {this.state.profession} />
                  <input onChange = {this.onUserHobbies} value = {this.state.hobbies} />
+                 <button onClick = {this.onAddUser.bind(this)}>Add new user </button>
             </div>
         )
 
