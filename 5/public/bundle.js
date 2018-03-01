@@ -22652,7 +22652,7 @@
 	module.exports = {
 	  searchMovies: function searchMovies(movie) {
 	
-	    fetch('http://www.omdbapi.com/?apikey=9035e80&s=' + movie.title).then(function (res) {
+	    fetch('https://www.omdbapi.com/?apikey=9035e80&s=' + movie.title).then(function (res) {
 	      return res.json();
 	    }).then(function (data) {
 	      AppServerActions.receiveMovieResults(data.Search);
